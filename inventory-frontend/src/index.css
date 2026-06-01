@@ -1,0 +1,318 @@
+
+/* --- Blinkit Inspired Color Palette --- */
+:root {
+    --blinkit-yellow: #FCD116;
+    --blinkit-green: #0C831F;
+    --blinkit-green-hover: #0a6c1a;
+    --bg-global: #F4F6F8;
+    --text-main: #1C2434;
+    --text-muted: #64748B;
+    --card-bg: #FFFFFF;
+    --border-color: #E2E8F0;
+    --danger-red: #DC2626;
+    --danger-bg: #FEE2E2;
+}
+
+/* --- Global Reset & Base Layout --- */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-global);
+    color: var(--text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+/* --- Premium App Header & Navigation --- */
+header {
+    background: var(--card-bg);
+    padding: 20px 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-bottom: 4px solid var(--blinkit-yellow);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+header h1 span {
+    color: var(--blinkit-green);
+}
+
+nav {
+    display: flex;
+    gap: 12px;
+}
+
+nav button {
+    padding: 10px 24px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-main);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 20px; /* Smooth rounded pill tabs */
+    transition: all 0.2s ease-in-out;
+}
+
+nav button:hover {
+    background: #F8FAFC;
+    border-color: var(--text-muted);
+}
+
+nav button.active {
+    background: var(--blinkit-yellow);
+    border-color: var(--blinkit-yellow);
+    color: var(--text-main);
+    box-shadow: 0 4px 12px rgba(252, 209, 22, 0.3);
+}
+
+/* --- Content Wrapper Area --- */
+main {
+    background: var(--card-bg);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+    min-height: 400px;
+}
+
+main h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: var(--text-main);
+}
+
+/* --- Blinkit Smart Dashboard Cards --- */
+div[style*="display: flex"] {
+    gap: 24px !important;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 24px;
+    border-radius: 12px;
+    text-align: left;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.01);
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--blinkit-yellow);
+}
+
+.card h3 {
+    margin: 0 0 8px 0;
+    font-size: 14px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card p {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+/* --- Modern Form Layouts --- */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+    background: #F8FAFC;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+input, select {
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--blinkit-green);
+    box-shadow: 0 0 0 3px rgba(12, 131, 31, 0.1);
+}
+
+/* --- Action Buttons --- */
+button[type="submit"] {
+    padding: 12px 24px;
+    background-color: var(--blinkit-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    box-shadow: 0 4px 12px rgba(12, 131, 31, 0.15);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--blinkit-green-hover);
+}
+
+/* --- Clean Minimalist Tables --- */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 16px;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 14px;
+}
+
+th {
+    background-color: #F8FAFC;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+tr:hover td {
+    background-color: #FDFEFE;
+}
+
+/* Table Specific Utility Buttons */
+td button {
+    padding: 6px 12px;
+    background: #F1F5F9;
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+td button:hover {
+    background: #E2E8F0;
+}
+
+td button[style*="background: red"] {
+    background: var(--danger-bg) !important;
+    color: var(--danger-red) !important;
+    border: 1px solid #FCA5A5 !important;
+}
+
+td button[style*="background: red"]:hover {
+    background: #FEE2E2 !important;
+    opacity: 0.9;
+}
+
+/* --- Status Badges & Alerts --- */
+.alert {
+    padding: 12px 16px;
+    background-color: #DCFCE7;
+    color: var(--blinkit-green);
+    border: 1px solid #BBF7D0;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Automatically style error alerts inside the same block */
+.alert[style*="color: red"],
+p[style*="color: red"] {
+    background-color: var(--danger-bg) !important;
+    color: var(--danger-red) !important;
+    border: 1px solid #FCA5A5;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+ul {
+    padding-left: 20px;
+    margin: 12px 0;
+}
+
+li[style*="color: red"] {
+    color: var(--danger-red) !important;
+    font-weight: 600;
+    font-size: 14px;
+    list-style-type: '⚠️ ';
+    margin-bottom: 6px;
+}
+
+/* --- Responsive Layout Breakpoints --- */
+@media (max-width: 768px) {
+    div[style*="display: flex"] {
+        flex-direction: column !important;
+    }
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    header {
+        padding: 16px;
+    }
+    main {
+        padding: 16px;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    th {
+        display: none;
+    }
+    tr {
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        margin-bottom: 12px;
+        padding: 8px;
+        background: #FFF;
+    }
+    td {
+        border: none;
+        padding: 8px 4px;
+        display:flex;
+        justify-content: space-between;
+    }
+}
