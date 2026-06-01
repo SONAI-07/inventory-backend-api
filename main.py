@@ -9,7 +9,7 @@ app = FastAPI(
 )
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Allows any frontend to connect
+    allow_origins=["*"], # Allows any frontend to connecttouc
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
