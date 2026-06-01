@@ -1,0 +1,25 @@
+# Git
+.git
+.gitignore
+
+# Python caching and environments
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Environment variables (Crucial for security!)
+.env
+
+# IntelliJ IDE files
+.idea/
+*.iml
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore

@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  # --- THE DATABASE CONTAINER ---
+  db:
+    image: postgres:15-alpine
+    container_name: inventory_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: securepassword123
+      POSTGRES_DB: inventory_db
+    ports:
+      - "5432:5432" # Maps the container's port to your Mac's localhost
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Prevents data loss when the container stops
+
+  # --- THE BACKEND API CONTAINER ---
+  api:
+    build: . # Tells Compose to look for the Dockerfile in the current directory
+    container_name: inventory_fastapi
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db # Ensures the database starts before the API
+    environment:
+      # This points to the 'db' service above, not localhost!
+      - DATABASE_URL=postgresql+asyncpg://admin:securepassword123@db:5432/inventory_db
+
+# Declaring the persistent volume for the database
+volumes:
+  postgres_data:
