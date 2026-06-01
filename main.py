@@ -1,11 +1,21 @@
 from fastapi import FastAPI
 import uvicorn
-from src.routers import products # Import the router
+from src.routers import products
 from src.routers import customers
 from src.routers import orders
 from fastapi.middleware.cors import CORSMiddleware
+from contextlib import asynccontextmanager
+from src.database.connection import engine, Base
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    async with engine.begin() as conn:
+        # This will safely create tables if they don't exist yet
+        await conn.run_sync(Base.metadata.create_all)
+    yield
+
 app = FastAPI(
-    title="Inventory & Order Management API",
+    title="Inventory & Order Management API",lifespan=lifespan
 )
 app.add_middleware(
     CORSMiddleware,
