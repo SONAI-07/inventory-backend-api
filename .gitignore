@@ -1,0 +1,16 @@
+# Python Environments
+venv/
+.venv/
+env/
+__pycache__/
+*.pyc
+
+# IDEs
+.idea/
+.vscode/
+
+# Security - NEVER COMMIT THIS
+.env
+
+# OS generated files
+.DS_Store
