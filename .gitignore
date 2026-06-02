@@ -15,4 +15,5 @@ __pycache__/
 # OS generated files
 .DS_Storegit
 
-inventory-frontend/
+inventory-frontend/inventory-frontend/
+.DS_Store
